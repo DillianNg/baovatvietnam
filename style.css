@@ -55,4 +55,54 @@ a {
   color: inherit;
   text-decoration: none;
 }
- 
+ :root {
+  --primary-color: #a52a2a;    /* màu đỏ gạch */
+  --secondary-color: #f4c95d;  /* vàng nâu */
+  --background-color: #f0e6d2; /* nền giấy */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: #333;
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  color: var(--secondary-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo img {
+  height: 60px;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
