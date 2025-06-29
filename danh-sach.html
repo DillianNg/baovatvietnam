@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Danh sách Bảo vật Quốc gia</title>
   <style>
+    body { margin:0; font-family:sans-serif; background:#f0f0f0; }
+    header { background: #a52a2a; color: white; padding: 10px 20px; }
+    header h1 { margin:0; }
+    .filter { background:#fff8f0; padding:10px 20px; border-bottom:1px solid #ccc; }
     .artifact-list {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       padding: 20px;
+      justify-content: center;
     }
     .artifact-card {
-      flex: 0 0 300px;
+      width: 300px;
       background: #fffaf0;
       border: 2px solid #a52a2a;
       border-radius: 8px;
@@ -40,7 +45,44 @@
   <header>
     <h1>Danh sách Bảo vật Quốc gia</h1>
   </header>
+
   <section class="filter">
     <label for="filterSelect">Lọc theo nơi lưu giữ:</label>
     <select id="filterSelect">
-      <option value="all">Tất cả</op
+      <option value="all">Tất cả</option>
+      <option value="Bảo tàng Lịch sử quốc gia">Bảo tàng Lịch sử quốc gia</option>
+      <option value="Bảo tàng Hồ Chí Minh">Bảo tàng Hồ Chí Minh</option>
+      <option value="Cục lưu trữ Văn phòng Trung ương Đảng">Cục lưu trữ Văn phòng Trung ương Đảng</option>
+      <option value="Bảo tàng Lịch sử thành phố Hồ Chí Minh">Bảo tàng Lịch sử thành phố Hồ Chí Minh</option>
+    </select>
+  </section>
+
+  <main class="artifact-list">
+    <div class="artifact-card">
+      <img src="images/trongdong-ngoclu.jpg" alt="Trống đồng Ngọc Lũ" />
+      <div class="info">
+        <h3>Trống đồng Ngọc Lũ</h3>
+        <p>Nơi lưu giữ: Bảo tàng Lịch sử quốc gia</p>
+        <p>Mô tả: Bảo vật tiêu biểu của nền văn hóa Đông Sơn.</p>
+      </div>
+    </div>
+    <!-- bạn tiếp tục copy thêm 19 artifact-card như trên -->
+  </main>
+
+  <script>
+    const select = document.getElementById('filterSelect');
+    select.addEventListener('change', function() {
+      const selected = this.value;
+      const cards = document.querySelectorAll('.artifact-card');
+      cards.forEach(card => {
+        const museum = card.querySelector('.info p').innerText;
+        if (selected === 'all' || museum.includes(selected)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
