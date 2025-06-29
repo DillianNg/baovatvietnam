@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Danh sách Bảo vật Quốc gia</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .artifact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+    .artifact-card {
+      display: flex;
+      background: #fffaf0;
+      border: 2px solid #a52a2a;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    .artifact-card .image {
+      flex: 1;
+      max-width: 200px;
+      overflow: hidden;
+    }
+    .artifact-card .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .artifact-card .info {
+      flex: 2;
+      padding: 10px;
+    }
+    .artifact-card .info h3 {
+      margin-top: 0;
+      color: #a52a2a;
+    }
+    .artifact-card .info p {
+      margin: 4px 0;
+    }
+    @media (max-width: 600px) {
+      .artifact-card {
+        flex-direction: column;
+      }
+      .artifact-card .image {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo Bảo vật" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="#">Địa phương</a></li>
+          <li><a href="#">Thời kỳ</a></li>
+          <li><a href="#">Thông tin dự án</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>Danh sách Bảo vật Quốc gia</h1>
+  </header>
+
+  <main class="artifact-list">
+    <div class="artifact-card">
+      <div class="image">
+        <img src="images/trongdong-ngoclu.jpg" alt="Trống đồng Ngọc Lũ" />
+      </div>
+      <div class="info">
+        <h3>Trống đồng Ngọc Lũ</h3>
+        <p>Nơi lưu giữ: Bảo tàng Lịch sử quốc gia</p>
+        <p>Mô tả: Bảo vật tiêu biểu của nền văn hóa Đông Sơn.</p>
+      </div>
+    </div>
+
+    <div class="artifact-card">
+      <div class="image">
+        <img src="images/tron
