@@ -6,48 +6,36 @@
   <title>Danh sách Bảo vật Quốc gia</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .artifact-list {
+    .artifact-grid {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 20px;
       padding: 20px;
+      justify-content: center;
     }
     .artifact-card {
-      display: flex;
+      width: 250px;
       background: #fffaf0;
       border: 2px solid #a52a2a;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
     }
-    .artifact-card .image {
-      flex: 1;
-      max-width: 200px;
-      overflow: hidden;
-    }
-    .artifact-card .image img {
+    .artifact-card img {
       width: 100%;
-      height: 100%;
+      height: 200px;
       object-fit: cover;
     }
-    .artifact-card .info {
-      flex: 2;
+    .artifact-info {
       padding: 10px;
     }
-    .artifact-card .info h3 {
-      margin-top: 0;
+    .artifact-info h3 {
+      margin: 0;
+      font-size: 1.1rem;
       color: #a52a2a;
     }
-    .artifact-card .info p {
+    .artifact-info p {
       margin: 4px 0;
-    }
-    @media (max-width: 600px) {
-      .artifact-card {
-        flex-direction: column;
-      }
-      .artifact-card .image {
-        max-width: 100%;
-      }
     }
   </style>
 </head>
@@ -55,220 +43,4 @@
   <header>
     <div class="navbar">
       <div class="logo">
-        <img src="images/logo.jpg" alt="Logo Bảo vật" />
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="#">Địa phương</a></li>
-          <li><a href="#">Thời kỳ</a></li>
-          <li><a href="#">Thông tin dự án</a></li>
-        </ul>
-      </nav>
-    </div>
-    <h1>Danh sách Bảo vật Quốc gia</h1>
-  </header>
-<section class="filter">
-  <label for="filterSelect">Lọc theo nơi lưu giữ:</label>
-  <select id="filterSelect">
-    <option value="all">Tất cả</option>
-    <option value="Bảo tàng Lịch sử quốc gia">Bảo tàng Lịch sử quốc gia</option>
-    <option value="Bảo tàng Hồ Chí Minh">Bảo tàng Hồ Chí Minh</option>
-    <option value="Cục lưu trữ Văn phòng Trung ương Đảng">Cục lưu trữ Văn phòng Trung ương Đảng</option>
-    <option value="Bảo tàng Lịch sử thành phố Hồ Chí Minh">Bảo tàng Lịch sử thành phố Hồ Chí Minh</option>
-  </select>
-</section>
-  <main class="artifact-list">
-    <div class="artifact-card">
-      <div class="image">
-        <img src="images/trongdong-ngoclu.jpg" alt="Trống đồng Ngọc Lũ" />
-      </div>
-      <div class="info">
-        <h3>Trống đồng Ngọc Lũ</h3>
-        <p>Nơi lưu giữ: Bảo tàng Lịch sử quốc gia</p>
-        <p>Mô tả: Bảo vật tiêu biểu của nền văn hóa Đông Sơn.</p>
-      </div>
-    </div>
-
-    <div class="artifact-card">
-      <div class="image">
-        <img src="images/tron
-          <script>
-  const select = document.getElementById('filterSelect');
-  select.addEventListener('change', function() {
-    const selected = this.value;
-    const cards = document.querySelectorAll('.artifact-card');
-    cards.forEach(card => {
-      const museum = card.querySelector('.info p').innerText;
-      if (selected === 'all' || museum.includes(selected)) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-</script>
-          <div class="artifact-grid">
-
-  <div class="artifact-card">
-    <img src="images/trongdong-ngoclu.jpg" alt="Trống đồng Ngọc Lũ">
-    <div class="artifact-info">
-      <h3>Trống đồng Ngọc Lũ</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/trongdong-hoangha.jpg" alt="Trống đồng Hoàng Hạ">
-    <div class="artifact-info">
-      <h3>Trống đồng Hoàng Hạ</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/thapdong-daothinh.jpg" alt="Thạp đồng Đào Thịnh">
-    <div class="artifact-info">
-      <h3>Thạp đồng Đào Thịnh</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuongdong-hai-nguoi.jpg" alt="Tượng đồng hai người cõng nhau thổi khèn">
-    <div class="artifact-info">
-      <h3>Tượng đồng hai người cõng nhau thổi khèn</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/den-dong-hinh-nguoi.jpg" alt="Cây đèn đồng hình người quỳ">
-    <div class="artifact-info">
-      <h3>Cây đèn đồng hình người quỳ</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/trongdong-canhthinh.jpg" alt="Trống đồng Cảnh Thịnh">
-    <div class="artifact-info">
-      <h3>Trống đồng Cảnh Thịnh</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/an-mon-ha-sanh.jpg" alt="Ấn đồng Môn Hạ Sảnh ấn">
-    <div class="artifact-info">
-      <h3>Ấn đồng “Môn Hạ Sảnh ấn”</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/binh-gom-thiennga.jpg" alt="Bình gốm hoa lam vẽ Thiên Nga">
-    <div class="artifact-info">
-      <h3>Bình gốm hoa lam vẽ Thiên Nga</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/duong-kach-menh.jpg" alt="Cuốn Đường Kách mệnh">
-    <div class="artifact-info">
-      <h3>Cuốn “Đường Kách mệnh”</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/nguc-trung-nhat-ky.jpg" alt="Ngục trung nhật ký">
-    <div class="artifact-info">
-      <h3>Tác phẩm “Ngục trung nhật ký”</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/loi-keu-goi-khang-chien.jpg" alt="Lời kêu gọi toàn quốc kháng chiến">
-    <div class="artifact-info">
-      <h3>Bản thảo “Lời kêu gọi toàn quốc kháng chiến”</h3>
-      <p>Bảo tàng Lịch sử quốc gia</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/loi-keu-goi-chien-si.jpg" alt="Lời kêu gọi đồng bào và chiến sĩ cả nước">
-    <div class="artifact-info">
-      <h3>Bản thảo “Lời kêu gọi đồng bào và chiến sĩ cả nước”</h3>
-      <p>Bảo tàng Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/di-chuc-bac-ho.jpg" alt="Bản Di chúc của Chủ tịch Hồ Chí Minh">
-    <div class="artifact-info">
-      <h3>Bản Di chúc của Chủ tịch Hồ Chí Minh</h3>
-      <p>Cục lưu trữ Văn phòng Trung ương Đảng</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-phat-dongduong.jpg" alt="Tượng Phật Đồng Dương">
-    <div class="artifact-info">
-      <h3>Tượng Phật Đồng Dương</h3>
-      <p>Bảo tàng Lịch sử thành phố Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-nu-than-devi.jpg" alt="Tượng Nữ Thần Devi (Hương Quế)">
-    <div class="artifact-info">
-      <h3>Tượng Nữ Thần Devi (Hương Quế)</h3>
-      <p>Bảo tàng Lịch sử thành phố Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-vishnu.jpg" alt="Tượng Thần Vishnu">
-    <div class="artifact-info">
-      <h3>Tượng Thần Vishnu</h3>
-      <p>Bảo tàng Lịch sử thành phố Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-phat-loimy.jpg" alt="Tượng Phật Lợi Mỹ">
-    <div class="artifact-info">
-      <h3>Tượng Phật Lợi Mỹ</h3>
-      <p>Bảo tàng Lịch sử thành phố Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-than-surya.jpg" alt="Tượng Thần Surya">
-    <div class="artifact-info">
-      <h3>Tượng Thần Surya</h3>
-      <p>Bảo tàng Lịch sử thành phố Hồ Chí Minh</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/tuong-bo-tat-tara.jpg" alt="Tượng Bồ tát Tara">
-    <div class="artifact-info">
-      <h3>Tượng Bồ tát Tara</h3>
-      <p>Bảo tàng Điêu khắc Chăm, Đà Nẵng</p>
-    </div>
-  </div>
-
-  <div class="artifact-card">
-    <img src="images/dai-tho-my-son-e1.jpg" alt="Đài thờ Mỹ Sơn E1">
-    <div class="artifact-info">
-      <h3>Đài thờ Mỹ Sơn E1</h3>
-      <p>Bảo tàng Điêu khắc Chăm, Đà Nẵng</p>
-    </div>
-  </div>
-
-</div>
-
+        <img src="i
