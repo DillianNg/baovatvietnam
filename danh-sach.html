@@ -68,7 +68,16 @@
     </div>
     <h1>Danh sách Bảo vật Quốc gia</h1>
   </header>
-
+<section class="filter">
+  <label for="filterSelect">Lọc theo nơi lưu giữ:</label>
+  <select id="filterSelect">
+    <option value="all">Tất cả</option>
+    <option value="Bảo tàng Lịch sử quốc gia">Bảo tàng Lịch sử quốc gia</option>
+    <option value="Bảo tàng Hồ Chí Minh">Bảo tàng Hồ Chí Minh</option>
+    <option value="Cục lưu trữ Văn phòng Trung ương Đảng">Cục lưu trữ Văn phòng Trung ương Đảng</option>
+    <option value="Bảo tàng Lịch sử thành phố Hồ Chí Minh">Bảo tàng Lịch sử thành phố Hồ Chí Minh</option>
+  </select>
+</section>
   <main class="artifact-list">
     <div class="artifact-card">
       <div class="image">
@@ -84,3 +93,18 @@
     <div class="artifact-card">
       <div class="image">
         <img src="images/tron
+          <script>
+  const select = document.getElementById('filterSelect');
+  select.addEventListener('change', function() {
+    const selected = this.value;
+    const cards = document.querySelectorAll('.artifact-card');
+    cards.forEach(card => {
+      const museum = card.querySelector('.info p').innerText;
+      if (selected === 'all' || museum.includes(selected)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
